@@ -81,8 +81,8 @@ th,td{
 .banner img{display:block; width:100%; height:auto;}
 
 /* Navigation Links (Home, Registration, etc) */
-table.navigation{width:800px;}
-td.navigation{font-size:1.67em; white-space:nowrap; width:25%; text-align:center; vertical-align:middle; padding:0px 0px 0px 0px;}
+table.navigation{width:1000px; table-layout:fixed;}
+td.navigation{font-size:1.15em; white-space:normal; width:25%; text-align:center; vertical-align:middle; line-height:1.3em; padding:0px 8px 0px 8px;}
 
 /* Sponsor Images */
 table.sponsors{width:800px;}
@@ -124,7 +124,7 @@ footer{font-size:0.875em; margin-top:12em; text-align:center;}
     table.registration-qr{width:100%; max-width:700px;}
     img.qr-code{width:260px; height:260px;}
     td.date{font-size:1em; padding-top:0.5em;}
-    td.navigation{font-size:1.5em; padding:0px 20px 0px 20px;}
+    td.navigation{font-size:1.1em; padding:0px 10px 0px 10px;}
     table.footer{font-size:0.33em;}
 }
 
