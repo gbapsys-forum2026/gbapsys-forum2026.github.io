@@ -8,11 +8,11 @@
     <script type="text/javascript" async
         src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=default">
     </script>
-    <meta name="description" content="Presentation Schedule for the 2nd Greater Bay Area Physical Science Young Scientist Forum">
+    <meta name="description" content="Forum overview for the 2nd Greater Bay Area Physical Science Young Scientist Forum">
     <meta name="resource-type" content="document">
     <meta name="distribution" content="global">
-    <meta name="KeyWords" content="Forum 2026, Presentation Schedule, Greater Bay Area, Physical Science">
-    <title>Presentation Schedule | Forum 2026</title>
+    <meta name="KeyWords" content="Forum 2026, Forum overview, Greater Bay Area, Physical Science">
+    <title>Forum overview | Forum 2026</title>
 </head>
 
 <body>
@@ -30,7 +30,7 @@
                 <a title="Abstract Submission" href="registration">Abstract Submission</a>
             </td>
             <td class="navigation">
-                <a class="current" title="Presentation Schedule" href="program">Presentation Schedule</a>
+                <a class="current" title="Forum overview" href="program">Forum overview</a>
             </td>
             <td class="navigation">
                 <a title="Conference Venue and Transportation" href="directions">Conference Venue and Transportation</a>
@@ -38,11 +38,64 @@
         </tr>
     </table>
 
-    <h2>Preliminary schedule:</h2>
-    <img class="program-overview" src="assets/program_overview.png" alt="Forum 2026 program overview">
-    <p class="program-note">
-        Detailed schedule will be available in May 2026.
-    </p>
+
+    <div class="sheet-tabs" role="tablist" aria-label="Forum overview sheets">
+        <button class="sheet-tab active" type="button" data-sheet="overview" aria-selected="true">Overview</button>
+        <button class="sheet-tab" type="button" data-sheet="day1-lt1" aria-selected="false">Day 1 LT1</button>
+        <button class="sheet-tab" type="button" data-sheet="day1-lt2" aria-selected="false">Day 1 LT2</button>
+        <button class="sheet-tab" type="button" data-sheet="day2-lt1" aria-selected="false">Day 2 LT1</button>
+        <button class="sheet-tab" type="button" data-sheet="day2-lt2" aria-selected="false">Day 2 LT2</button>
+    </div>
+
+    <div class="sheet-panels">
+        <section class="sheet-panel active" id="overview" data-sheet="overview" role="tabpanel">
+            <img class="program-overview" src="assets/Web-Figs/Overview.png" alt="Forum overview">
+        </section>
+        <section class="sheet-panel" id="day1-lt1" data-sheet="day1-lt1" role="tabpanel" hidden>
+            <img class="program-overview" src="assets/Web-Figs/Day1-LT1.png" alt="Day 1 LT1 overview">
+        </section>
+        <section class="sheet-panel" id="day1-lt2" data-sheet="day1-lt2" role="tabpanel" hidden>
+            <img class="program-overview" src="assets/Web-Figs/Day1-LT2.png" alt="Day 1 LT2 overview">
+        </section>
+        <section class="sheet-panel" id="day2-lt1" data-sheet="day2-lt1" role="tabpanel" hidden>
+            <img class="program-overview" src="assets/Web-Figs/Day2-LT1.png" alt="Day 2 LT1 overview">
+        </section>
+        <section class="sheet-panel" id="day2-lt2" data-sheet="day2-lt2" role="tabpanel" hidden>
+            <img class="program-overview" src="assets/Web-Figs/Day2-LT2.png" alt="Day 2 LT2 overview">
+        </section>
+    </div>
+
+    <script>
+        (function () {
+            const tabs = Array.from(document.querySelectorAll('.sheet-tab'));
+            const panels = Array.from(document.querySelectorAll('.sheet-panel'));
+
+            function activate(sheetId, updateHash) {
+                const nextTab = tabs.find(tab => tab.dataset.sheet === sheetId) || tabs[0];
+                const nextPanel = panels.find(panel => panel.dataset.sheet === (nextTab && nextTab.dataset.sheet)) || panels[0];
+                tabs.forEach(tab => {
+                    const active = tab === nextTab;
+                    tab.classList.toggle('active', active);
+                    tab.setAttribute('aria-selected', active ? 'true' : 'false');
+                });
+                panels.forEach(panel => {
+                    const active = panel === nextPanel;
+                    panel.classList.toggle('active', active);
+                    panel.hidden = !active;
+                });
+                if (updateHash && nextPanel) {
+                    history.replaceState(null, '', '#' + nextPanel.id);
+                }
+            }
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => activate(tab.dataset.sheet, true));
+            });
+
+            const initial = window.location.hash ? window.location.hash.slice(1) : 'overview';
+            activate(initial, false);
+        }());
+    </script>
 
     <footer>
         &copy; Forum 2026 Organizing Committee

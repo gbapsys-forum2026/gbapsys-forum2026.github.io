@@ -118,6 +118,15 @@ img.qr-code{display:block; width:220px; height:220px; max-width:100%; margin:0 a
 .session-themes-title{margin-bottom:8px;}
 .session-themes-list{margin-top:0;}
 iframe.directions{display:block; margin:1em auto 2em auto; width:800px; height:400px; border:none;}
+.sheet-tabs{display:flex; flex-wrap:wrap; width:900px; max-width:100%; margin:0 auto 18px auto;}
+.sheet-tab{flex:1 1 0; min-width:0; cursor:pointer; border:1px solid #c9b8c0; border-bottom:none; border-right:none; background:#ffffff; color:#813c54; padding:8px 12px; border-radius:0; font-family:Arial,sans-serif; font-weight:bold;}
+.sheet-tab:first-child{border-radius:8px 0 0 0;}
+.sheet-tab:last-child{border-right:1px solid #c9b8c0; border-radius:0 8px 0 0;}
+.sheet-tab:hover{color:#b2132e;}
+.sheet-tab.active{background:#813c54; color:#ffffff; border-color:#813c54;}
+.sheet-panels{width:900px; max-width:100%; margin:0 auto;}
+.sheet-panel{margin:0 auto 24px auto;}
+.sheet-panel[hidden]{display:none;}
 img.center{display:block; width:900px; max-width:100%; height:auto; margin:1em auto 2em auto;}
 img.program-overview{display:block; width:100%; margin:1em auto 2em auto;}
 p.program-note{width:100%; margin:0 auto 24px auto;}
