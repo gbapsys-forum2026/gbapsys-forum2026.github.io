@@ -52,11 +52,12 @@ li a, p a {text-decoration:underline; text-decoration-color:#b8860b;}
 ul{list-style:none; margin:24px auto 24px auto; padding:0px; width:800px; text-align:left;}
 ul.browser-default {
     list-style: disc;
-    padding-left: 0px;
+    padding-left: 1.5em;
 }
 ul li{list-style:none; margin:0px auto 0px auto; padding:0px; text-align:left;}
 ul.browser-default li {
     list-style: disc;
+    display: list-item;
 }
 i,em{font-style:italic;}
 b,strong{font-weight:bold;}
@@ -89,7 +90,7 @@ th,td{
 
 /* Navigation Links (Home, Registration, etc) */
 table.navigation{width:1000px; table-layout:fixed;}
-td.navigation{font-size:1.15em; white-space:normal; width:25%; text-align:center; vertical-align:middle; line-height:1.3em; padding:0px 8px 0px 8px;}
+td.navigation{font-size:1.15em; white-space:normal; width:20%; text-align:center; vertical-align:middle; line-height:1.3em; padding:0px 8px 0px 8px;}
 
 /* Sponsor Images */
 table.sponsors{width:800px;}
@@ -130,6 +131,19 @@ iframe.directions{display:block; margin:1em auto 2em auto; width:800px; height:4
 img.center{display:block; width:900px; max-width:100%; height:auto; margin:1em auto 2em auto;}
 img.program-overview{display:block; width:100%; margin:1em auto 2em auto;}
 p.program-note{width:100%; margin:0 auto 24px auto;}
+
+/* Gallery Page */
+.gallery-intro{width:900px; margin:24px auto 16px auto;}
+.gallery-upload{width:900px; margin:0 auto 24px auto; padding:20px 24px; border:1px solid #c9b8c0; border-radius:12px; background:#ffffff; text-align:center; box-sizing:border-box;}
+.gallery-upload h3{margin-top:0;}
+.gallery-upload-button{display:inline-block; margin:12px auto 0 auto; padding:12px 20px; border-radius:8px; background:#52739e; color:#ffffff; font-family:Arial,sans-serif; font-weight:bold; text-decoration:none;}
+.gallery-upload-button:hover{background:#b2132e; color:#ffffff;}
+.gallery-note{width:900px; margin:0 auto 24px auto; text-align:center; font-size:0.95em;}
+.gallery-grid{width:900px; margin:0 auto 24px auto; display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:16px;}
+.gallery-card{border:1px solid #d9ccd3; border-radius:12px; background:#ffffff; overflow:hidden;}
+.gallery-card img{display:block; width:100%; height:220px; object-fit:cover;}
+.gallery-card p{width:auto; margin:0; padding:12px 14px;}
+.gallery-empty{padding:24px 18px; min-height:220px; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; color:#813c54; background:#fcf8fa;}
 
 /* Flyer Images */
 table.flyers{width:800px;}
